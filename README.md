@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
 
 
-A comprehensive machine learning framework for automated stress detection using the **WESAD (Wearable Stress and Affect Detection)** dataset. This project validates the feasibility of using consumer-grade wearable sensors (Empatica E4) alongside medical-grade instrumentation (RespiBAN) to identify physiological markers of stress.
+A comprehensive machine learning project for stress and emotional detection using the **WESAD (Wearable Stress and Affect Detection)** dataset. This project validates the feasibility of using consumer-grade wearable sensors (Empatica E4) alongside medical-grade instrumentation (RespiBAN) to identify physiological markers of stress.
 
 ## 🚀 Project Highlights
 * **High-Accuracy Classification:** Achieved **96.95% Accuracy** and an **0.93 F-Score** in binary stress detection (Stress vs. Baseline).
