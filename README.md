@@ -36,10 +36,16 @@ A comprehensive machine learning framework for automated stress detection using 
 * **Method:** OLS Multiple Linear Regression with **Bidirectional Stepwise Selection**.
 * **Finding:** Physiological signals are strong predictors of Arousal ($R^2 \sim 0.50$) but weaker for Valence, reflecting the "internal" nature of physiological arousal.
 
+#### Visualization Example:
+![Visualization Example](assets/Arousal.png)
+![Visualization Example](assets/Valence.png)
+
 ### Phase III: Classification (Stress Detection)
 * **Models:** Evaluated 8+ algorithms including Naive Bayes, KNN, SVM, and Neural Networks.
 * **Optimization:** Used `GridSearchCV` for hyperparameter tuning and `ImbPipeline` to apply **SMOTE** only within training folds (preventing data leakage).
 * **Winner:** **Logistic Regression** outperformed complex ensembles, demonstrating that a well-regularized linear model is highly effective for standardized physiological data.
+
+#### Visualization Example:
 
 ![Visualization Example](assets/Classification_Results.png)
 
@@ -47,6 +53,10 @@ A comprehensive machine learning framework for automated stress detection using 
 * **Goal:** Verify if "Stress" and "Baseline" are naturally distinct physiological states without using labels.
 * **Metric:** Optimized clusters ($k=2$) via **Silhouette Score** (0.384) and **Elbow Method**.
 * **Result:** High alignment with ground truth (ARI = 0.80), validating the robustness of the derived features.
+
+#### Visualization Example:
+
+![Visualization Example](assets/GMM.png)
 
 ---
 
@@ -74,6 +84,46 @@ A comprehensive machine learning framework for automated stress detection using 
 
 ---
 
-## 🎓 Acknowledgments
+## Usage
+
+1. Clone the repository:
+```sh
+!git clone https://github.com/HemuTheReddy/Stress-Prediction
+```
+2. Install required libraries
+```bash
+pip install dash pandas numpy plotly scipy sklearn seaborn
+```
+3. Go to python folder
+```bash
+cd python
+```
+4. Run Phase 1
+```bash
+python Phase1_part1.py
+```
+5. Run Phase 1 part 2
+```bash
+python Phase1_part2.py
+```
+6. Run Phase 2
+```bash
+python Phase2.py
+```
+7. Run Phase 3
+```bash
+python Phase3_loso.py
+```
+8. Run Phase 4
+```bash
+python Phase4.py
+```
+---
+
+## 🎓 Acknowledgments/Citation
 Developed as the Final Term Project for **CS 5805: Machine Learning I** at **Virginia Tech**. 
-Dataset source: *Schmidt et al. (2018). "Introducing WESAD: A Multimodal Dataset for Wearable Stress and Affect Detection."*
+
+Dataset source: https://archive.ics.uci.edu/dataset/465/wesad+wearable+stress+and+affect+detection
+
+Paper used:
+> Schmidt, P., Reiss, A., Duerichen, R., Marberger, C., & Van Laerhoven, K. (2018). Introducing WESAD: A Multimodal Dataset for Wearable Stress and Affect Detection. In *Proceedings of the 20th ACM International Conference on Multimodal Interaction* (pp. 400-408). ACM. https://doi.org/10.1145/3242969.3242985
