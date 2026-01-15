@@ -1,8 +1,7 @@
 # Multimodal Stress & Affect Detection (WESAD)
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
-![Scikit-Learn](https://img.shields.io/badge/scikit--learn-latest-orange)
-![Machine Learning](https://img.shields.io/badge/ML-Regression%20%7C%20Classification%20%7C%20Clustering-green)
+
 
 A comprehensive machine learning framework for automated stress detection using the **WESAD (Wearable Stress and Affect Detection)** dataset. This project validates the feasibility of using consumer-grade wearable sensors (Empatica E4) alongside medical-grade instrumentation (RespiBAN) to identify physiological markers of stress.
 
