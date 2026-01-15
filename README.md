@@ -31,7 +31,7 @@ A comprehensive machine learning framework for automated stress detection using 
 * **Dimensionality Reduction:** Pruned 54 features down to the most predictive subset using a hybrid **Random Forest Importance + VIF** approach to eliminate multicollinearity.
 * **Outlier Removal:** Used **Isolation Forest** (5% contamination) to clean motion artifacts.
 
-### Phase II: Regression Analysis (Emotional Mapping)
+### Phase II: Regression Analysis (Emotional Mapping from Survery)
 * **Goal:** Predict continuous **Arousal** (Intensity) and **Valence** (Positivity).
 * **Method:** OLS Multiple Linear Regression with **Bidirectional Stepwise Selection**.
 * **Finding:** Physiological signals are strong predictors of Arousal ($R^2 \sim 0.50$) but weaker for Valence, reflecting the "internal" nature of physiological arousal.
@@ -40,7 +40,7 @@ A comprehensive machine learning framework for automated stress detection using 
 ![Visualization Example](assets/Arousal.png)
 ![Visualization Example](assets/Valence.png)
 
-### Phase III: Classification (Stress Detection)
+### Phase III: Classification (Stressed or Not Stressed)
 * **Models:** Evaluated 8+ algorithms including Naive Bayes, KNN, SVM, and Neural Networks.
 * **Optimization:** Used `GridSearchCV` for hyperparameter tuning and `ImbPipeline` to apply **SMOTE** only within training folds (preventing data leakage).
 * **Winner:** **Logistic Regression** outperformed complex ensembles, demonstrating that a well-regularized linear model is highly effective for standardized physiological data.
