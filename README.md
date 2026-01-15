@@ -41,6 +41,8 @@ A comprehensive machine learning framework for automated stress detection using 
 * **Optimization:** Used `GridSearchCV` for hyperparameter tuning and `ImbPipeline` to apply **SMOTE** only within training folds (preventing data leakage).
 * **Winner:** **Logistic Regression** outperformed complex ensembles, demonstrating that a well-regularized linear model is highly effective for standardized physiological data.
 
+![Visualization Example](assets/Classification_Results.png)
+
 ### Phase IV: Clustering (Unsupervised Validation)
 * **Goal:** Verify if "Stress" and "Baseline" are naturally distinct physiological states without using labels.
 * **Metric:** Optimized clusters ($k=2$) via **Silhouette Score** (0.384) and **Elbow Method**.
