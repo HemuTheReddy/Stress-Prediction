@@ -3,7 +3,9 @@
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
 
 
-A comprehensive machine learning project for stress and emotional detection using the **WESAD (Wearable Stress and Affect Detection)** dataset. This project validates the feasibility of using consumer-grade wearable sensors (Empatica E4) alongside medical-grade instrumentation (RespiBAN) to identify physiological markers of stress.
+A comprehensive machine learning project for stress and emotional detection using the **WESAD (Wearable Stress and Affect Detection)** dataset. This project validates the feasibility of using consumer-grade wearable sensors (Empatica E4) alongside medical-grade instrumentation (RespiBAN) to identify physiological markers of stress. I also developed a high-level streamlit dashboard for users to gain a quicker understanding of the project alongside faster insights.
+
+Streamlit Dashboard: [Dashboard Link](https://ml-stress-pred.streamlit.app/)
 
 ## 🚀 Project Highlights
 * **High-Accuracy Classification:** Achieved **96.95% Accuracy** and an **0.93 F-Score** in binary stress detection (Stress vs. Baseline).
@@ -19,7 +21,7 @@ A comprehensive machine learning project for stress and emotional detection usin
 * **Unsupervised Learning:** K-Means, Gaussian Mixture Models (GMM), PCA, and Elbow/Silhouette analysis.
 * **Statistical Analysis:** Bidirectional Stepwise Selection, Multicollinearity (VIF) Analysis, OLS Regression, and Hypothesis Testing (p-values, F-statistics).
 * **Data Engineering:** Subject-Specific Z-score Standardization, SMOTE (Imbalance Handling), and Isolation Forests (Anomaly Detection).
-* **Tools:** `Python`, `Scikit-learn`, `Scipy`, `Statsmodels`, `Pandas`, `Numpy`, `Seaborn`.
+* **Tools:** `Python`, `Streamlit`, `Scikit-learn`, `Scipy`, `Statsmodels`, `Pandas`, `Numpy`, `Seaborn`
 
 ---
 
