@@ -106,10 +106,6 @@ def parse_wesad_quest(subject_id, base_dir):
     
     return subject_meta 
 
-import pandas as pd
-import numpy as np
-from scipy.signal import welch, find_peaks, butter, filtfilt
-
 # Just some standard signal processing functions needed for feature extraction
 
 def get_peak_freq(sig, fs):
@@ -468,5 +464,6 @@ if __name__ == "__main__":
 
 
     master_df.to_csv("wesad_features.csv", index=False)
+
 
     print("Final shape:", master_df.shape)
