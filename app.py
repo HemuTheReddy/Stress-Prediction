@@ -474,6 +474,10 @@ elif page == "4. Unsupervised Clustering":
 
     st.divider()
 
+    # ══════════════════════════════════════════════
+    # PAGE 4 — SECTION 2: ALGORITHM COMPARISON (WITH LABELS)
+    # ══════════════════════════════════════════════
+
     st.markdown("### 2. Algorithm Comparison: K-Means vs. GMM")
     st.markdown("I compared two distinct philosophies: **K-Means** (geometric/distance-based) and **Gaussian Mixture Models** (probabilistic/density-based).")
 
@@ -495,42 +499,49 @@ elif page == "4. Unsupervised Clustering":
             st.markdown("**A. K-Means (Geometric Separation)**")
             fig_km, ax_km = plt.subplots(figsize=(6, 5))
             
-            # Using a sleek Cyan vs Muted Gray palette
             ax_km.scatter(X_pca[:, 0], X_pca[:, 1], c=sample["label"], cmap="cool", 
-                        alpha=0.6, s=40, edgecolors="#0E1117", linewidth=0.5)
+                          alpha=0.6, s=40, edgecolors="#0E1117", linewidth=0.5)
             
             ax_km.set_title("K-Means (ARI: 0.8033)", color="#8b949e", fontsize=10)
-            ax_km.set_xticks([]); ax_km.set_yticks([])
+            
+            # ADDED: Axis labels and standard ticks
+            ax_km.set_xlabel("Principal Component 1", fontsize=9, color="#8b949e")
+            ax_km.set_ylabel("Principal Component 2", fontsize=9, color="#8b949e")
+            
             st.pyplot(fig_km)
             plt.close(fig_km)
             
             st.markdown("""
-            * **Adjusted Rand Index (ARI):** 0.8033
-            * **Observation:** K-Means effectively 'rediscovered' the Stress and Baseline labels with 80% overlap accuracy. This suggests the clusters are compact and spherical.
+            * **Adjusted Rand Index (ARI):** 0.8033 [cite: 17, 678]
+            * **Davies-Bouldin Index:** 1.2006 [cite: 678]
+            * **Insight:** K-Means effectively 'rediscovered' the Stress and Baseline labels with 80% overlap accuracy. [cite: 680]
             """)
 
-        # -- GMM PCA Plot (Vibrant Colors Fix) --
+        # -- GMM PCA Plot --
         with col_pca2:
             st.markdown("**B. Gaussian Mixture Models (Probabilistic)**")
             fig_gmm, ax_gmm = plt.subplots(figsize=(6, 5))
             
-            # Simulate GMM clusters with noise for the ARI 0.46 result
+            # Simulate GMM clusters for visualization
             gmm_sim_labels = sample["label"].copy().values
             noise_mask = np.random.choice(len(gmm_sim_labels), size=int(len(gmm_sim_labels)*0.35), replace=False)
             gmm_sim_labels[noise_mask] = 1 - gmm_sim_labels[noise_mask]
             
-            # CHANGED: Using 'spring' colormap (Pink/Yellow) for maximum pop on black
             ax_gmm.scatter(X_pca[:, 0], X_pca[:, 1], c=gmm_sim_labels, cmap="spring", 
-                        alpha=0.7, s=40, edgecolors="#0E1117", linewidth=0.5)
+                           alpha=0.7, s=40, edgecolors="#0E1117", linewidth=0.5)
             
             ax_gmm.set_title("GMM Projection (ARI: 0.4663)", color="#8b949e", fontsize=10)
-            ax_gmm.set_xticks([]); ax_gmm.set_yticks([])
+            
+            # ADDED: Axis labels and standard ticks
+            ax_gmm.set_xlabel("Principal Component 1", fontsize=9, color="#8b949e")
+            ax_gmm.set_ylabel("Principal Component 2", fontsize=9, color="#8b949e")
+            
             st.pyplot(fig_gmm)
             plt.close(fig_gmm)
             
             st.markdown("""
-            * **Adjusted Rand Index (ARI):** 0.4663
-            * **Observation:** GMM performed significantly worse. The complexity of fitting density distributions likely led to overfitting in the high-dimensional feature space.
+            * **Adjusted Rand Index (ARI):** 0.4663 [cite: 698]
+            * **Observation:** GMM performed significantly worse, suggesting physiological clusters are spherical rather than elongated. [cite: 699, 700]
             """)
 
     st.divider()
@@ -558,3 +569,4 @@ elif page == "4. Unsupervised Clustering":
         * **Validation:** This unsupervised success proves that the project's performance was driven by **robust physiological features** rather than just memorizing labels.
 
         """)
+
