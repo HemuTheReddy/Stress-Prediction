@@ -467,7 +467,7 @@ elif page == "4. Unsupervised Clustering":
         st.caption("Visualizing the 'Elbow' and Silhouette peaks used to validate the structural integrity of the clusters.")
         
         try:
-            st.image("path.svg", 
+            st.image("assets/path.svg", 
                     caption="The Silhouette analysis confirming k=2.", width='stretch')
         except:
             pass
@@ -556,4 +556,5 @@ elif page == "4. Unsupervised Clustering":
         * **Structural Integrity:** Clustering confirms that Stress and Baseline are not just arbitrary labels—they are physiologically distinct, structurally separate states.
         * **Linear Separability:** The high success of K-Means ($ARI=0.80$) explains why simple linear models like Logistic Regression achieved such high accuracy.
         * **Validation:** This unsupervised success proves that the project's performance was driven by **robust physiological features** rather than just memorizing labels.
+
         """)
